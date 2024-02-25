@@ -1,1 +1,15 @@
-<h3>Cart</h3>
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %} 
+    Cart
+{% endblock title %} 
+
+{% block content %} 
+    <header> 
+        {% include 'store/navbar.html' %}
+    </header>  
+    <body>
+        <p>Cart</p>
+    </body> 
+    <hr>
+{% endblock content %}

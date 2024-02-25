@@ -1,109 +1,71 @@
-<!DOCTYPE html> 
+{% extends 'store/base.html' %}
 {% load static %}
-<html> 
-    <head>
-        <title>e shop</title>   
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width-device-width, initial-scale=1.0">  
-        <meta name = "author" content = "vzzyxn">
-        <meta name = "description" content = "e-shop e-commerce final-project">
-       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
-        <!--Internal CSS--> 
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">    
-        <!--Custom Fonts-->
-        <link rel="preconnect" href="https://rsms.me/">
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    </head> 
-<body>
-    <nav class="bg-gray-800">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-16 items-center justify-between">
-      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
-        <button type="button" id="mobileMenuBtn" class="hrelative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-          <span class="absolute -inset-0.5"></span>
-          <span class="sr-only">Open main menu</span>
+{% block title %} 
+    Home
+{% endblock title %} 
 
-          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          
-          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-        <div class="flex flex-shrink-0 items-center">
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
-        </div>
-        <div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="text-neutral-100 hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-            <a href="#" class="text-neutral-100 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Category</a>
-            <a href="#" class="text-neutral-100 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Cart</a>
-            <a href="#" class="text-neutral-100 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-          </div>
-        </div>
-      </div>
+{% block content %}
+        <header> 
+            {% include 'store/navbar.html' %}
+        </header>  
+        <body>    
+            <p id="firstpara">Where the business makes<br>it easier to buy</p>
+            <!--section 1-->
+            <div class="section_one">  
+                    <div class="row">  
+                       <div class="col-1">
+                            <img src = "{% static 'media/swisswatchhome.jpg' %}" alt="swiss watch home picture"/>  
+                            <p id="first_sub">Wore Luxury</p> 
+                            <p id="second_sub">Watches</p>
+                            <p id="main_sub"><a href="/">Shop now</a></p> 
+                        </div>
+                        <div class="col-2">
+                            <img src = "{% static 'media/swissshoehome.jpg' %}" alt="footwear home picture"/>   
+                            <p id="first_sub">Latest Kick</p> 
+                            <p id="second_sub">Footwears</p>
+                            <p id="main_sub"><a href="/">Shop now</a></p> 
+                        </div>
+                        <div class="col-3">
+                            <img src = "{% static 'media/homemencloth.avif' %}" alt="clothing home picture"/>  
+                            <p id="first_sub">20% off</p>
+                            <p id="second_sub">Clothing</p> 
+                            <p id="main_sub"><a href="/">Shop now</a></p>
+                        </div>
+                    </div>
+            </div>  
+            <!--section 1--> 
 
-        <!-- Profile dropdown -->
-        <div class="relative ml-3">
-          <div>
-            <button id="dropdownBtn" type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" >
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full" src=" " alt="">
-            </button>
-          </div>
+            <!--section 2-->
+            <div class="section_two">
+                <h2>Featured</h2> 
+                <div class="featured_row">
+                    <div class="fcol-1">
+                        <img src="{% static 'media/airmaxhome.webp' %}" alt="airmaxhomepic"/> 
+                            <p id="product_name">Nike Air Max 97</p> 
+                            <p id="product_detail">Shoes</p> 
+                            <p id="product_price">₹ 16,975 <i class="fa-solid fa-cart-shopping"></i></p>
+                    </div>
+                    <div class="fcol-2">  
+                        <img src="{% static 'media/fossilhome.webp' %}" alt="casiomdv10"/>
+                        <p id="product_name">Fossil Grant Sport Choronograph</p>  
+                        <p id="product_detail">Watches</p> 
+                        <p id="product_price">₹ 10,000 <i class="fa-solid fa-cart-shopping"></i></p>
+                    </div>  
+                    <div class="fcol-3">
+                        <img src="{% static 'media/h&mshirt.jpeg' %}" alt="h&mshirthome"/> 
+                        <p id="product_name">H&M Regular Fit Shirt</p> 
+                        <p id="product_detail">Shirts</p> 
+                        <p id="product_price">₹ 1,500 <i class="fa-solid fa-cart-shopping"></i></p>
+                    </div>
+                </div>
+            </div>  
+            <!--section 2--> 
 
-          <div id="dropdownMenu" class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-      <!--To change the state and make the profile dropdown interactive--> 
-      <script>  
-             document.addEventListener('DOMContentLoaded', function() {
-                const dropdownBtn = document.getElementById('dropdownBtn')
-                const dropdownMenu = document.getElementById('dropdownMenu')
-
-                      dropdownBtn.addEventListener('click', function() {
-                        dropdownMenu.classList.toggle('hidden')
-                      })
-             })
-      </script>
-  <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden" id="mobile-menu" >
-    <div class="hidden px-2 pb-3 pt-2" id="mobileDropDown">
-      <a href="#" class="text-neutral-100 hover:bg-gray-700 block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-      <a href="#" class="text-neutral-100 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Category</a>
-      <a href="#" class="text-neutral-100 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Cart</a>
-      <a href="#" class="text-neutral-100 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
-    </div>
-  </div> 
-        <!--To change the state and make the mobile menu button interactive--> 
-        <script>    
-              document.addEventListener('DOMContentLoaded', function() {
-                const mobileMenuBtn = document.getElementById('mobileMenuBtn')
-                const mobileDropDown = document.getElementById('mobileDropDown')
-
-                mobileMenuBtn.addEventListener('click', function() {
-                  mobileDropDown.classList.toggle('hidden')
-                })
-              })
-        </script>
-</nav>  
-    
-    <div class="container">
-        {% block content %}
-
-        {% endblock content %} 
-    </div>
-</body> 
-</html>
+            <!--section 3-->
+        <div class="section-3"> 
+                <h1>Section-3</h1> 
+        </div> 
+        <!--section 3-->
+        </body> 
+            {% include 'store/footer.html' %}  
+{% endblock content %} 

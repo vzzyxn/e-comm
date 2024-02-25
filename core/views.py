@@ -3,8 +3,8 @@ from django.http import HttpResponse
 
 def index(request): 
     return render(request, "store/index.html") 
-def category(request):
-    return render(request, "store/category.html")
+def products(request):
+    return render(request, "store/products.html")
 def cart(request):
     return render(request, "store/cart.html")
 def checkout(request):
