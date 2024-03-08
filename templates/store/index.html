@@ -6,12 +6,12 @@
 
 {% block content %}
         <header> 
-            {% include 'store/navbar.html' %}
+            {% include 'store/navbar.html' %} 
         </header>  
-        <body>    
+        <body>   
             <p id="firstpara">Where the business makes<br>it easier to buy</p>
             <!--section 1-->
-            <div class="section_one">  
+            <div class="section_one"> 
                     <div class="row">  
                        <div class="col-1">
                             <img src = "{% static 'media/swisswatchhome.jpg' %}" alt="swiss watch home picture"/>  
@@ -36,36 +36,10 @@
             <!--section 1--> 
 
             <!--section 2-->
-            <div class="section_two">
-                <h2>Featured</h2> 
-                <div class="featured_row">
-                    <div class="fcol-1">
-                        <img src="{% static 'media/airmaxhome.webp' %}" alt="airmaxhomepic"/> 
-                            <p id="product_name">Nike Air Max 97</p> 
-                            <p id="product_detail">Shoes</p> 
-                            <p id="product_price">₹ 16,975 <i class="fa-solid fa-cart-shopping"></i></p>
-                    </div>
-                    <div class="fcol-2">  
-                        <img src="{% static 'media/fossilhome.webp' %}" alt="casiomdv10"/>
-                        <p id="product_name">Fossil Grant Sport Choronograph</p>  
-                        <p id="product_detail">Watches</p> 
-                        <p id="product_price">₹ 10,000 <i class="fa-solid fa-cart-shopping"></i></p>
-                    </div>  
-                    <div class="fcol-3">
-                        <img src="{% static 'media/h&mshirt.jpeg' %}" alt="h&mshirthome"/> 
-                        <p id="product_name">H&M Regular Fit Shirt</p> 
-                        <p id="product_detail">Shirts</p> 
-                        <p id="product_price">₹ 1,500 <i class="fa-solid fa-cart-shopping"></i></p>
-                    </div>
-                </div>
-            </div>  
+                     
+            <!-- {% for product in products %}  
+                    {%endfor %}  --> 
             <!--section 2--> 
 
-            <!--section 3-->
-        <div class="section-3"> 
-                <h1>Section-3</h1> 
-        </div> 
-        <!--section 3-->
-        </body> 
             {% include 'store/footer.html' %}  
 {% endblock content %} 
