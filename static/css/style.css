@@ -136,13 +136,16 @@ nav a {
 }  
 .section_two {
     padding: 0px 30px; 
+}  
+.products-row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    
+    grid-gap: 15px;
 } 
-.featured_row img { 
-    height: auto; 
-    width: 200px; 
-    cursor: pointer; 
-    padding: 0px 1px; 
-} 
+.products img { 
+    height: 300px; 
+    width:50%;
+}
 #product_name {
     font-size: 17px; 
     cursor: pointer; 
@@ -154,15 +157,10 @@ nav a {
 #product_category {
     font-size: 14px;
     color: rgb(109, 106, 106);
-} 
-.products {
-    display: flex; 
-    justify-content: space-evenly;
-}
-.featured_row  i{ 
-    float: right;
-    font-size: 20px; 
-} 
+}  
+
+
+
 /* for device less than 992px */
 @media(max-width: 992px) {
     header {

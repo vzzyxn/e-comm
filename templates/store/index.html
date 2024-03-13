@@ -14,7 +14,7 @@
             <div class="section_one"> 
                     <div class="row">  
                        <div class="col-1">
-                            <img src = "{% static 'media/swisswatchhome.jpg' %}" alt="swiss watch home picture"/>  
+                            <img src = "{% static 'media/watchpichome.webp' %}" alt="swiss watch home picture"/>  
                             <p id="first_sub">Wore Luxury</p> 
                             <p id="second_sub">Watches</p>
                             <p id="main_sub"><a href="/">Shop now</a></p> 
@@ -26,20 +26,32 @@
                             <p id="main_sub"><a href="/">Shop now</a></p> 
                         </div>
                         <div class="col-3">
-                            <img src = "{% static 'media/homemencloth.avif' %}" alt="clothing home picture"/>  
+                            <img src = "{% static 'media/clothpichome.jpeg' %}" alt="clothing home picture"/>  
                             <p id="first_sub">20% off</p>
                             <p id="second_sub">Clothing</p> 
                             <p id="main_sub"><a href="/">Shop now</a></p>
                         </div>
-                    </div>
-            </div>  
+                    </div> 
+
+            </div> 
             <!--section 1--> 
 
             <!--section 2-->
-                     
-            <!-- {% for product in products %}  
-                    {%endfor %}  --> 
-            <!--section 2--> 
+            <div class="section_two"> 
+                <h2>Featured</h2>  
+                <div class="products-row">
+                    {% for product in products %} 
+                    <div class="products">
+                            <img src = "{{ product.image.url }}"/>   
+                            <p id="product_name"> {{ product.name }} </p> 
+                            <p id="product_category"> {{ product.category }} </p> 
+                            <p id="product_price"> RS {{ product.price }} </p>
+                    </div> 
+                    {% endfor %}
+                </div>
+            </div>
+ 
 
-            {% include 'store/footer.html' %}  
-{% endblock content %} 
+            {% include 'store/footer.html' %} 
+        </body>
+{% endblock %}  

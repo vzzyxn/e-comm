@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # for automatic browser reload without refreshing the browser 
     'django_browser_reload',  
     # custom apps(apps which you've to use in ecommerce-app)
-    "core"
+    "core",
 ]
 
 MIDDLEWARE = [
