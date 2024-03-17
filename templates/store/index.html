@@ -38,18 +38,51 @@
 
             <!--section 2-->
             <div class="section_two"> 
-                <h2>Featured</h2>  
+                <p id="featured_heading">Featured</p>  
                 <div class="products-row">
                     {% for product in products %} 
                     <div class="products">
-                            <img src = "{{ product.image.url }}"/>   
+                            <img src = "{{ product.image.url }}" height = "300px" width = "200px" />   
                             <p id="product_name"> {{ product.name }} </p> 
                             <p id="product_category"> {{ product.category }} </p> 
-                            <p id="product_price"> RS {{ product.price }} </p>
+                            <p id="product_price"> RS {{ product.price }} <i class="fa-solid fa-cart-shopping"></i></i></p>
                     </div> 
                     {% endfor %}
                 </div>
+            </div> 
+            <!--section 2--> 
+
+            <!--section 3-->
+            <div class="section_three"> 
+                <p id="animation_title">Some of the brands we have</p>
+                <div class="slider">
+                    <div class="slide-track"> 
+                    <!--brand-logo images-->                       
+                        <div class="slide">
+                            <img src = "{% static 'media/h&mlogo.png' %}" height = "70px" width = "120px"/>
+                        </div> 
+                        <div class="slide">
+                            <img src = "{% static 'media/nikelogo.jpg' %}" height = "70px" width = "120px"/>
+                        </div> 
+                        <div class="slide">
+                            <img src = "{% static 'media/fossillogo.png' %}" height = "70px" width = "120px"/> 
+                        </div> 
+                        <div class="slide">
+                            <img src = "{% static 'media/casiologo.jpg' %}" height = "70px" width = "120px"/>
+                        </div> 
+                        <div class="slide">
+                            <img src = "{% static 'media/calvinkleinlogo.jpg' %}" height = "70px" width = "120px"/>
+                        </div> 
+                        <div class="slide">
+                            <img src = "{% static 'media/allensollylogo.jpg' %}" height = "70px" width = "120px"/>
+                        </div> 
+                        <div class="slide">
+                            <img src = "{% static 'media/raybanlogo.png'}" height = "70px" width = "120px"/>
+                    <!--brand-logo images-->
+                    </div>
+                </div>
             </div>
+            <!--section 3-->
  
 
             {% include 'store/footer.html' %} 
