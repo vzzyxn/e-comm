@@ -8,7 +8,11 @@
         <li><a href="/products">Products</a></li> 
         <li><a href="/cart">Cart</a></li> 
       </ul>  
-      <div class="profile_button_main">
-        <button class="profile_button"><a href="/">Login</a></button>  
+      <div class="profile_button_main"> 
+        {% if user.is_authenticated %} 
+            <button class="profile_button"><a href="">Logout</a></button>   
+        {% else %}
+            <button class="profile_button"><a href="/login">Login</a></button> 
+        {% endif %}
     </div> 
 </nav>

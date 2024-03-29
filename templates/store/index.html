@@ -5,9 +5,9 @@
 {% endblock title %} 
 
 {% block content %}
-        <header> 
+        <nav> 
             {% include 'store/navbar.html' %} 
-        </header>  
+        </nav>  
         <body>   
             <p id="firstpara">Where the business makes<br>it easier to buy</p>
             <!--section 1-->
@@ -54,11 +54,11 @@
 
             <!--section 3-->
             <div class="section_three"> 
-                <p id="animation_title">Some of the brands we have</p>
+                <p id="animation_title">Some of the brands we have</p> 
                 <div class="slider">
                     <div class="slide-track"> 
-                    <!--brand-logo images-->                       
-                        <div class="slide">
+                    <!--brand-logo images-->             
+                    <div class="slide">
                             <img src = "{% static 'media/h&mlogo.png' %}" height = "70px" width = "120px"/>
                         </div> 
                         <div class="slide">
@@ -79,12 +79,28 @@
                         <div class="slide">
                             <img src = "{% static 'media/raybanlogo.png'}" height = "70px" width = "120px"/>
                     <!--brand-logo images-->
+                    </div> 
+                </div>
+                </div>
+            </div>
+            <!--section 3--> 
+
+            <!--section 4-->
+            <div class="section_four">
+                <div class="comment-box">
+                    <div class="box"> 
+                        <div class="comment_user_profile"> 
+                            <img src = "{% static 'media/sampleuser1.jpg' %}" width ="60px" height="60px"/>
+                        </div> 
+                            <div class="comment_user_details">
+                                <p id="comment_id">Patrick Bateman</p>    
+                                <p id="comment_date">2024</p>  
+                                <p id="user_comment">Impressive, very nice</p>
+                            </div> 
                     </div>
                 </div>
             </div>
-            <!--section 3-->
- 
-
+            <!--section 4-->
             {% include 'store/footer.html' %} 
         </body>
 {% endblock %}  

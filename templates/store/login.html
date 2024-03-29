@@ -1,0 +1,37 @@
+{% extends 'store/base.html' %}
+{% load static %} 
+{% block title %} 
+    Login 
+{% endblock title %}  
+
+{% block content %}   
+    <nav>
+        {% include 'store/navbar.html' %}
+    </nav>
+    <body> 
+        <section class="login_page">
+            <div class="login-form-main"> 
+                <div class="login">
+                    <form method="POST" action = " ">
+                        <label for="lbl" id="login-label">Login</label>  
+                            <input type="text" name="userid" placeholder="Email or phone number"/> 
+                            <input type="password" name="userpassword" placeholder="Password"/>  
+                            <button type="submit">Login</button> 
+                    </form> 
+                </div> 
+                <div class="sign-up">
+                    <form> 
+                        <label for="lbl" id="signup-label">Sign up</label>  
+                            <input type="text" name="userid" placeholder="Username"/> 
+                            <input type="email" name="useremail" placeholder="Email"/> 
+                            <input type="password" name="userpassword" placeholder="Password"/> 
+                            <button type="submit">Sign up</button>
+                    </form>  
+                </div>
+            </div> 
+        </section>
+    </body>
+{% endblock content %}
+
+
+
