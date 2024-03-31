@@ -272,18 +272,24 @@ nav a {
     background: #eee;
     border-radius: 10px;
 }  
-
-
-
-
-
-
-
-
-
-
-
-
+.alert {
+  padding: 20px;
+  background-color: gray;
+  color: black; 
+} 
+.login-alert {
+    padding: 20px;
+    background-color: red;
+    color: black; 
+}
+.closebtn {
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 1px;
+  cursor: pointer;
+}
 
 
 

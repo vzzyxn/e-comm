@@ -1,4 +1,4 @@
-{% extends 'store/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block title %} 
     Home
@@ -6,8 +6,17 @@
 
 {% block content %}
         <nav> 
-            {% include 'store/navbar.html' %} 
-        </nav>  
+            {% include 'navbar.html' %}  
+        </nav> 
+        <!--alert for log-in/log-out-->
+        {% if messages %} 
+        {% for message in messages %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>  
+                {{ message }}
+        </div>   
+        {% endfor %}
+        {% endif %} 
         <body>   
             <p id="firstpara">Where the business makes<br>it easier to buy</p>
             <!--section 1-->
@@ -101,6 +110,6 @@
                 </div>
             </div>
             <!--section 4-->
-            {% include 'store/footer.html' %} 
+            {% include 'footer.html' %} 
         </body>
 {% endblock %}  

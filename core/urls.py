@@ -1,9 +1,8 @@
 from django.urls import path 
-from core.views import index,products,cart,checkout,login 
 from . import views
 app_name = "route" 
 
-urlpatterns = [
+urlpatterns= [
     path("",views.index, name='index'),
     path("products/",views.products, name='products'),
     path("cart/",views.cart, name='cart'),

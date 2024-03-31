@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse  
 
 # to return Product from models.py 
@@ -12,15 +12,31 @@ from django.contrib import messages
 def index(request): 
     # query to return Product object from models.py  
     products = Product.objects.all()  
-    return render(request, "store/index.html", {'products': products}) 
+    return render(request, "index.html", {'products': products}) 
 
 def products(request):
-    return render(request, "store/products.html")
+    return render(request, "products.html")
 def cart(request):
-    return render(request, "store/cart.html")
+    return render(request, "cart.html")
 def checkout(request):
-    return render(request, "store/checkout.html")  
-def login_user(request):
-    return render(request, "store/login.html") 
+    return render(request, "checkout.html")  
+
+def login_user(request): 
+    if request.method == "POST":
+        userid = request.POST['userid']  
+        userpassword = request.POST['userpassword']
+        user = authenticate(request, username = userid, password = userpassword)
+        if user is not None:
+            login(request, user)
+            messages.success(request, (f"Hello {userid}👋! You have been logged in"))
+            return redirect('/')
+        else:
+            messages.success(request, ("Incorrect username or password! Please try again"))
+            return redirect('/login')
+    else:
+        return render(request, "login.html") 
+
 def logout_user(request):
-    logout(request)
+    logout(request) 
+    messages.success(request, (f"Bye! see you again.."))
+    return redirect('/')

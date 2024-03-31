@@ -1,4 +1,4 @@
-{% extends 'store/base.html' %}
+{% extends 'base.html' %}
 {% load static %} 
 {% block title %} 
     Login 
@@ -6,13 +6,23 @@
 
 {% block content %}   
     <nav>
-        {% include 'store/navbar.html' %}
+        {% include 'navbar.html' %}
     </nav>
+    {% if messages %} 
+        {% for message in messages %}
+        <div class="login-alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>  
+                {{ message }}
+        </div>   
+        {% endfor %}
+    {% endif %} 
     <body> 
         <section class="login_page">
             <div class="login-form-main"> 
                 <div class="login">
-                    <form method="POST" action = " ">
+                    <form method="POST" action = "{% url 'route:login' %}"> 
+                        <!--cross site request-forgery-->
+                        {% csrf_token %} 
                         <label for="lbl" id="login-label">Login</label>  
                             <input type="text" name="userid" placeholder="Email or phone number"/> 
                             <input type="password" name="userpassword" placeholder="Password"/>  
