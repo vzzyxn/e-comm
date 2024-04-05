@@ -20,7 +20,7 @@
         <section class="login_page">
             <div class="login-form-main"> 
                 <div class="login">
-                    <form method="POST" action = "{% url 'route:login' %}"> 
+                    <form method="POST" action = "{% url 'login' %}"> 
                         <!--cross site request-forgery-->
                         {% csrf_token %} 
                         <label for="lbl" id="login-label">Login</label>  
@@ -29,7 +29,7 @@
                             <button type="submit">Login</button> 
                     </form> 
                     <br/> 
-                      <p id="createacc">New Here? <a href="{% url 'route:register' %}">Create an account</a></p>
+                      <p id="createacc">New Here? <a href="{% url 'register' %}">Create an account</a></p>
                 </div> 
             </div> 
         </section>

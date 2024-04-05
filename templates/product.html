@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} 
+<nav>
+    {% include 'navbar.html' %}
+</nav> 
+    <div class="flexbox">
+        <div class="left"> 
+            <div class="big-img">  
+                <img src = "{{ product.image.url }}" height="250px" width="450px">
+            </div>   
+        </div> 
+        <div class="right">
+            <div class="categoryofproduct"><p>{{ product.category }}</p></div>  
+            <div class="nameofproduct"><p>{{ product.name }}</p></div>
+            <div class="ratingsforproduct">
+            
+            </div>
+            <div class="priceforproduct"><p>{{ product.price }}</p></div>
+            <div class="productsize"> 
+              <p>Size&ensp;&ensp;</p>
+                <div class="psize">M</div> 
+                <div class="psize">L</div>
+                <div class="psize">X</div> 
+                <div class="psize">XL</div>  
+            </div>  
+            <div class="quantity">
+                <p>Quantity</p> 
+                    <input type="number" min="1" value="1">
+            </div>
+            <div class="buy-cart-box">
+                <button class="cart-btn">Add to cart</button>
+                <button class="buy-btn">Buy now</button>
+            </div>
+        </div> 
+    </div>  
+    <script>
+        let bigImg = document.querySelector('.big-img img'); 
+        function showImg(pic) { 
+            bigImg.src = pic;
+        }
+    </script> 
+{% endblock %}

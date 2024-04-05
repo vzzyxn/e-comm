@@ -21,7 +21,7 @@
 <section class="signup_page"> 
     <div class="signup-form-main">
             <div class="sign-up">
-                <form method="POST" action="{% url 'route:register' %}"> 
+                <form method="POST" action="{% url 'register' %}"> 
                         {% csrf_token %}
                     <label for="lbl" id="signup-label">Sign up</label>             
                             {{ form.as_p }}

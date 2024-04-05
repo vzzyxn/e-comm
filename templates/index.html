@@ -7,7 +7,7 @@
 {% block content %}
         <nav> 
             {% include 'navbar.html' %}  
-        </nav> 
+        </nav>  
         <!--alert for log-in/log-out-->
         {% if messages %} 
         {% for home_message in messages %}
@@ -52,7 +52,7 @@
                     {% for product in products %} 
                     <div class="products">
                             <img src = "{{ product.image.url }}" height = "300px" width = "200px" />   
-                            <p id="product_name"> {{ product.name }} </p> 
+                            <p id="product_name"><a href="{% url 'product' product.id%}">{{ product.name }}</a></p> 
                             <p id="product_category"> {{ product.category }} </p> 
                             <p id="product_price"> RS {{ product.price }} <i class="fa-solid fa-cart-shopping"></i></i></p>
                     </div> 
@@ -108,7 +108,7 @@
                             </div> 
                     </div>
                 </div>
-            </div>
+            </div>  
             <!--section 4-->
             {% include 'footer.html' %} 
         </body>

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_browser_reload',  
     # custom apps(apps which you've to use in ecommerce-app)
     "core",
+    "cart" 
 ]
 
 MIDDLEWARE = [
@@ -122,8 +123,7 @@ USE_TZ = True
 
 # static path 
 STATIC_URL = 'static/' 
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+STATICFILES_DIRS = ['static/']
 
 # media path 
 MEDIA_URL = 'media/product/'

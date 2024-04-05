@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse  
 
 # to return Product from models.py 
-from .models import Product 
+from .models import Product
 # import user authentication,login,logout from django 
 from django.contrib.auth import authenticate,login,logout 
 # for displaying alert messages etc..
@@ -18,15 +18,7 @@ from django import forms
 def index(request): 
     # query to return Product object from models.py  
     products = Product.objects.all()  
-    return render(request, "index.html", {'products': products}) 
-
-# products page 
-def products(request):
-    return render(request, "products.html")
-
-# cart page
-def cart(request):
-    return render(request, "cart.html")
+    return render(request, "index.html",{'products': products}) 
 
 # checkout page
 def checkout(request):
@@ -71,3 +63,8 @@ def register_user(request):
             return redirect('/register')
 
     return render(request, "register.html", {'form':form})
+
+# product page 
+def product(request, pk):
+    product = Product.objects.get(id=pk)
+    return render(request, "product.html", {'product':product})
