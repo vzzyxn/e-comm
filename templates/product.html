@@ -2,9 +2,6 @@
 {% load static %}
 
 {% block content %} 
-<nav>
-    {% include 'navbar.html' %}
-</nav> 
     <div class="flexbox">
         <div class="left"> 
             <div class="big-img">  
@@ -12,7 +9,7 @@
             </div>   
         </div> 
         <div class="right">
-            <div class="categoryofproduct"><p>{{ product.category }}</p></div>  
+            <div class="categoryofproduct"><p>{{ product.category }}</p></div>   
             <div class="nameofproduct"><p>{{ product.name }}</p></div>
             <div class="ratingsforproduct">
             
@@ -30,7 +27,7 @@
                     <input type="number" min="1" value="1">
             </div>
             <div class="buy-cart-box">
-                <button class="cart-btn">Add to cart</button>
+                <button value="{{ product.id }}" id="add-cart" class="cart-btn">Add to cart</button>
                 <button class="buy-btn">Buy now</button>
             </div>
         </div> 
@@ -40,5 +37,27 @@
         function showImg(pic) { 
             bigImg.src = pic;
         }
+
+
+        // if button is pressed  
+        $(document).on('click', '#add-cart', function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "{% url 'cart_add' %}",
+                data: {
+                    product_id: $('#add-cart').val(),
+                    csrfmiddlewaretoken: "{{ csrf_token }}",
+                    action: "post"
+                }, 
+                success: function(json) {
+                    console.log(json)
+                },
+                error: function(xhr, errmsg, err) {
+
+                }
+
+            });
+        })
     </script> 
 {% endblock %}

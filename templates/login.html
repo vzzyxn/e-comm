@@ -4,10 +4,7 @@
     Login 
 {% endblock title %}  
 
-{% block content %}   
-    <nav>
-        {% include 'navbar.html' %}
-    </nav>
+{% block content %}    
     {% if messages %} 
         {% for login_message in messages %}
         <div class="login-alert">
